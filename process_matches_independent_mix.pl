@@ -10,7 +10,7 @@ open(FILE,$ARGV[0]);
 while(<FILE>){
 	chomp;
 	my ($feat_name, $start, $end, $read_name, undef, $strand) = split(/\t/);
-	$read_pairs{$read_name}{1}{'feat_name'} = $feat_name;
+	$read_pairs{$read_name}{1}{'feat_name'} = uc($feat_name);
 	$read_pairs{$read_name}{1}{'strand'} = $strand;
 	$read_pairs{$read_name}{1}{'start'} = $start;
 	$read_pairs{$read_name}{1}{'end'} = $end;
@@ -21,7 +21,7 @@ open(FILE,$ARGV[1]);
 while(<FILE>){
 	chomp;
 	my ($feat_name, $start, $end, $read_name, undef, $strand) = split(/\t/);
-	$read_pairs{$read_name}{2}{'feat_name'} = $feat_name;
+	$read_pairs{$read_name}{2}{'feat_name'} = uc($feat_name);
 	$read_pairs{$read_name}{2}{'strand'} = $strand;
 	$read_pairs{$read_name}{2}{'start'} = $start;
 	$read_pairs{$read_name}{2}{'end'} = $end;
